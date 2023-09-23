@@ -1,28 +1,17 @@
 package datadrivenexample;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 import org.json.simple.JSONObject;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 
-public class Post_request {
-	@DataProvider(name = "DataForPost")
-	public Object[][] dataForPost() {
-
-		Object[][] data = new Object[2][3];
-		data[0][0] = "Pranav";
-		data[0][1] = "Patil";
-		data[0][2] = 2;
-
-		data[1][0] = "Nitin";
-		data[1][1] = "Gujar";
-		data[1][2] = 1;
-		return data;
-
-	}
+public class DataDrivenEx extends DataForTests {
 
 	@Test(dataProvider = "DataForPost")
 	public void test_post(String firstName, String lastName, int SubjectId) {
@@ -37,5 +26,11 @@ public class Post_request {
 
 		given().header("Content-Type", "application/json").contentType(ContentType.JSON).body(request.toJSONString())
 				.when().post("https://reqres.in/api/users").then().statusCode(201).log().all();
+	}
+
+	@Parameters("userId")
+	@Test
+	public void get_data(String  userId) {
+		given().get("https://reqres.in/api/users"+userId).then().statusCode(200).log().all();
 	}
 }

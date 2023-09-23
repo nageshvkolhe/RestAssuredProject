@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Tests_DELETE">
+      <class name="datadrivenexample.DataDrivenEx">
         <methods>
-          <include name="put_test"/>
+          <include name="get_data"/>
         </methods>
-      </class> <!-- Tests_DELETE -->
+      </class> <!-- datadrivenexample.DataDrivenEx -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

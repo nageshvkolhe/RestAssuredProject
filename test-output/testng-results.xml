@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-23T20:03:05 IST" name="Default suite" finished-at="2023-09-23T20:03:14 IST" duration-ms="9114">
+  <suite started-at="2023-09-24T00:05:02 IST" name="Suite" finished-at="2023-09-24T00:05:18 IST" duration-ms="16021">
     <groups>
     </groups>
-    <test started-at="2023-09-23T20:03:05 IST" name="Default test" finished-at="2023-09-23T20:03:14 IST" duration-ms="9114">
-      <class name="datadrivenexample.Post_request">
-        <test-method signature="test_post(java.lang.String,java.lang.String,int)[pri:0, instance:datadrivenexample.Post_request@576d5deb]" started-at="2023-09-23T20:03:05 IST" name="test_post" data-provider="DataForPost" finished-at="2023-09-23T20:03:13 IST" duration-ms="8152" status="PASS">
+    <test started-at="2023-09-24T00:05:02 IST" name="Test" finished-at="2023-09-24T00:05:18 IST" duration-ms="16021">
+      <class name="datadrivenexample.DataDrivenEx">
+        <test-method signature="get_data(java.lang.String)[pri:0, instance:datadrivenexample.DataDrivenEx@6221a451]" started-at="2023-09-24T00:05:02 IST" name="get_data" finished-at="2023-09-24T00:05:16 IST" duration-ms="14030" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- get_data -->
+        <test-method signature="test_post(java.lang.String,java.lang.String,int)[pri:0, instance:datadrivenexample.DataDrivenEx@6221a451]" started-at="2023-09-24T00:05:16 IST" name="test_post" data-provider="DataForPost" finished-at="2023-09-24T00:05:17 IST" duration-ms="932" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,7 +39,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_post -->
-        <test-method signature="test_post(java.lang.String,java.lang.String,int)[pri:0, instance:datadrivenexample.Post_request@576d5deb]" started-at="2023-09-23T20:03:13 IST" name="test_post" data-provider="DataForPost" finished-at="2023-09-23T20:03:14 IST" duration-ms="673" status="PASS">
+        <test-method signature="test_post(java.lang.String,java.lang.String,int)[pri:0, instance:datadrivenexample.DataDrivenEx@6221a451]" started-at="2023-09-24T00:05:17 IST" name="test_post" data-provider="DataForPost" finished-at="2023-09-24T00:05:18 IST" duration-ms="655" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +48,7 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[Gujar]]>
+                <![CDATA[Gujju]]>
               </value>
             </param>
             <param index="2">
@@ -49,7 +60,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_post -->
-      </class> <!-- datadrivenexample.Post_request -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- datadrivenexample.DataDrivenEx -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
