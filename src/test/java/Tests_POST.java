@@ -13,11 +13,9 @@ import static org.hamcrest.Matchers.*;
 public class Tests_POST {
 	@Test
 	public void test_post() {
-//		Map<String, Object> map = new HashMap<String, Object>();
-//		
+//		Map<String, Object> map = new HashMap<String, Object>();	
 //		map.put("name", "Nagesh");
 //		map.put("job", "SDET");
-//
 //		System.out.println(map);
 		JSONObject request = new JSONObject();
 
@@ -32,6 +30,7 @@ public class Tests_POST {
 		.contentType(ContentType.JSON)
 		.body(request.toJSONString())
 		.when()
-		.post("https://reqres.in/api/users").then().statusCode(201);
+		.post("https://reqres.in/api/users").then().statusCode(201)
+		.log().all();
 	}
 }
