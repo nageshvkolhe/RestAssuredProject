@@ -6,29 +6,32 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtils {
+	static XSSFWorkbook workbook;
+	static XSSFSheet sheet;
 
-	public static void main(String[] args) {
-		getRowCount();
-	}
-
-	public static void getRowCount() {
+	public ExcelUtils(String excelPath, String sheetName) {
 
 		try {
-			String projectPath = System.getProperty("user.dir");
-			System.out.println(projectPath);
-
-			String excelPath = projectPath + "/TestData/TestData.xlsx";
-
-			XSSFWorkbook workbook = new XSSFWorkbook(excelPath);
-			XSSFSheet sheet = workbook.getSheet("Sheet");
-
-			int rowCount = sheet.getPhysicalNumberOfRows();
-			System.out.println("No of Rows :" +rowCount);
-
+			workbook = new XSSFWorkbook(excelPath);
+			sheet = workbook.getSheet(sheetName);
 		} catch (Exception exp) {
 			System.out.println(exp.getMessage());
 			System.out.println(exp.getCause());
 			exp.printStackTrace();
 		}
+	}
+
+	public static void getCellData(int rowNum, int colNum) {
+
+		String value = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+		System.out.println(value);
+
+	}
+
+	public static void getRowCount() {
+
+		int rowCount = sheet.getPhysicalNumberOfRows();
+		System.out.println("No of Rows :" + rowCount);
+
 	}
 }
